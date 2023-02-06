@@ -1,0 +1,33 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars.yml
+
+  pre_tasks:
+    - name: Update Package List
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Upgrade Packages
+      apt:
+        upgrade: yes
+
+    - name: Remove Obsolete Packages
+      apt:
+        autoremove: true
+
+  tasks:
+    - name: Install Packages
+      apt:
+        state: present
+        pkg:
+          "{{ packages }}"
+
+    - name: Make New Sudo User '{{ username }}'
+      user:
+        name: "{{ username }}"
+        group: sudo
+        password: "{{ password }}"
+        shell: /usr/bin/zsh

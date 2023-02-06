@@ -1,0 +1,14 @@
+---
+packages:
+  - neofetch
+  - exa
+  - git
+  - sudo
+  - rsync
+  - nano
+  - zsh
+  - curl
+  - wget
+  - htop
+username: # Change to whatever username you want to change it to
+password: # Replace me with output of "mkpasswd --method=sha-512"
