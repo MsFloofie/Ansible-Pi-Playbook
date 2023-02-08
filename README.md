@@ -29,4 +29,4 @@ cp example.vars.yml vars.yml
 
  - Automatically install [Oh My ZSH](https://ohmyz.sh/#install).
 
- - Add SSH keys
+ - Automatically add SSH keys
